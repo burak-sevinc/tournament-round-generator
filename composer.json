@@ -1,0 +1,25 @@
+{
+    "name": "burak-sevinc/tournament-round-generator",
+    "description": "A PHP library for generating tournament rounds with helpful calculations.",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4|^8.0|^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "BurakSevinc\\TournamentRoundGenerator\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5.7"
+    },
+    "authors": [
+        {
+            "name": "Burak Sevinc",
+            "email": "info@buraksevinc.dev"
+        }
+    ],
+    "version": "1.0.0"
+}
