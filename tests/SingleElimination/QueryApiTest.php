@@ -114,4 +114,14 @@ final class QueryApiTest extends TestCase
 
         $this->assertSame([null, null], $bracket->getTeamsInMatch(999));
     }
+
+    #[Test]
+    #[TestDox('Returns empty feeder and next match results for an unknown match id')]
+    public function it_returns_empty_results_for_unknown_match_in_feeder_and_next_queries(): void
+    {
+        $bracket = (new SingleElimination(8))->linkMatches();
+
+        $this->assertSame([], $bracket->getFeederMatches(999));
+        $this->assertNull($bracket->getNextMatch(999));
+    }
 }

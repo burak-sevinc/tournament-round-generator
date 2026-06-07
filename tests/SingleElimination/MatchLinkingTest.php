@@ -99,4 +99,17 @@ final class MatchLinkingTest extends TestCase
         $this->assertSame(5, $rounds[1][0]['nextMatchId']);
         $this->assertSame([1, 2], $rounds[2][0]['prevMatchIds']);
     }
+
+    #[Test]
+    #[TestDox('Links a sixteen-team bracket through to a single final match')]
+    public function it_links_a_sixteen_team_bracket_to_the_final(): void
+    {
+        $bracket = (new SingleElimination(16))->linkMatches();
+
+        $this->assertSame(15, $bracket->getMatchById(15)?->getMatchId());
+        $this->assertNull($bracket->getMatchById(15)?->getNextMatchId());
+        $this->assertSame([13, 14], $bracket->getMatchById(15)?->getPrevMatchIds());
+        $this->assertSame(9, $bracket->getMatchById(1)?->getNextMatchId());
+        $this->assertSame(15, $bracket->getMatchById(13)?->getNextMatchId());
+    }
 }
