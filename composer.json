@@ -5,11 +5,16 @@
     "license": "MIT",
     "minimum-stability": "stable",
     "require": {
-        "php": "^7.4|^8.0|^8.1"
+        "php": "^8.1"
     },
     "autoload": {
         "psr-4": {
             "BurakSevinc\\TournamentRoundGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BurakSevinc\\TournamentRoundGenerator\\Tests\\": "tests/"
         }
     },
     "require-dev": {
@@ -21,5 +26,5 @@
             "email": "info@buraksevinc.dev"
         }
     ],
-    "version": "1.0.0"
+    "version": "2.0.0"
 }
